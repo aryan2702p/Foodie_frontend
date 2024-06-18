@@ -14,6 +14,11 @@ export default function Signup() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const validatePassword = (value) => {
+    // Regular expression to match password criteria
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,16}$/;
+    return passwordRegex.test(value);
+  };
 
   return (
     <div className="signup-background">
@@ -137,14 +142,17 @@ export default function Signup() {
                 </label>
               </div>
               <div className="mt-2">
-                <input
-                  id="password"
-                  {...register("password", {
-                    required: "Password is required",
-                  })}
-                  type="password"
-                  className="input block w-full rounded-md border py-2 px-3 text-gray-900 shadow-sm focus:ring-indigo-600 focus:ring-2 hover:bg-white"
-                />
+              <input
+          id="password"
+          {...register("password", {
+            required: "Password is required",
+            validate: (value) =>
+              validatePassword(value) ||
+              "Password must be 8-16 characters long, alphanumeric, with at least one lowercase, one uppercase, and one special character",
+          })}
+          type="password"
+          className="input block w-full rounded-md border py-2 px-3 text-gray-900 shadow-sm focus:ring-indigo-600 focus:ring-2 hover:bg-white"
+        />
                 {errors.password && (
                   <p className="text-red-500 mt-2 heading">{errors.password.message}</p>
                 )}
