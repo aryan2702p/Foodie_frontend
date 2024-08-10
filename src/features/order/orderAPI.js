@@ -1,6 +1,6 @@
 export function createOrder(order) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8080/orders', {
+      const response = await fetch('https://foodiebackend-production.up.railway.app/orders', {
         method: 'POST',
         body: JSON.stringify(order),
         headers: { 'content-type': 'application/json' },
@@ -12,7 +12,7 @@ export function createOrder(order) {
 
   export function updateOrder(order) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8080/orders/'+order.id, {
+      const response = await fetch('https://foodiebackend-production.up.railway.app/orders/'+order.id, {
         method: 'PATCH',
         body: JSON.stringify(order),
         headers: { 'content-type': 'application/json' },
@@ -34,7 +34,7 @@ export function createOrder(order) {
   
     return new Promise(async (resolve) => {
       const response = await fetch(
-        'http://localhost:8080/orders?' + queryString
+        'https://foodiebackend-production.up.railway.app/orders?' + queryString
       );
       const data = await response.json();
       const totalOrders = await response.headers.get('X-Total-Count');
@@ -45,7 +45,7 @@ export function createOrder(order) {
   export function fetchAdminOrders() {
     
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8080/orders/admin');
+      const response = await fetch('https://foodiebackend-production.up.railway.app/orders/admin');
       const data = await response.json();
       resolve({ data });
     });

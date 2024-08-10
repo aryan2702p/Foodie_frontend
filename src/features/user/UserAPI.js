@@ -1,6 +1,6 @@
 export function fetchLoggedInUserOrders(userId) {
     return new Promise(async (resolve) =>{
-      const response = await fetch('http://localhost:8080/orders/user/'+userId) 
+      const response = await fetch('https://foodiebackend-production.up.railway.app/orders/user/'+userId) 
       const data = await response.json()
       resolve({data})
     }
@@ -9,7 +9,7 @@ export function fetchLoggedInUserOrders(userId) {
 
   export function fetchLoggedInUser(userId) {
     return new Promise(async (resolve) =>{
-      const response = await fetch('http://localhost:8080/users/'+userId) 
+      const response = await fetch('https://foodiebackend-production.up.railway.app/users/'+userId) 
       const data = await response.json()
       resolve({data})
     }
@@ -18,7 +18,7 @@ export function fetchLoggedInUserOrders(userId) {
 
   export function fetchAllUsers() {
     return new Promise(async (resolve) =>{
-      const response = await fetch('http://localhost:8080/users/') 
+      const response = await fetch('https://foodiebackend-production.up.railway.app/users/') 
       const data = await response.json();
       const totalUsers = await response.headers.get('X-Total-Count');
       resolve({ data: { users: data, totalUsers: +totalUsers } });
@@ -29,7 +29,7 @@ export function fetchLoggedInUserOrders(userId) {
   
   export function updateUser(update) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8080/users/'+update.id, {
+      const response = await fetch('https://foodiebackend-production.up.railway.app/users/'+update.id, {
         method: 'PATCH',
         body: JSON.stringify(update),
         headers: { 'content-type': 'application/json' },

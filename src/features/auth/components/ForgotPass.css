@@ -1,7 +1,7 @@
 /* Add this styling to your existing ForgotPassword.css file */
 
 .forgot-password-background {
-    background-image: url("C:\Minor_project\cafe_online_ordering_system\frontend\public\pexels-aleksandar-pasaric-1415734.jpg");
+    background-image: url("../../../../public/pexels-aleksandar-pasaric-1415734.jpg");
     background-size: cover;
   }
   

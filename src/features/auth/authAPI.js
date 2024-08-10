@@ -1,6 +1,6 @@
 export function createUser(userData) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8080/auth/signup', {
+      const response = await fetch('https://foodiebackend-production.up.railway.app/auth/signup', {
         method: 'POST',
         body: JSON.stringify(userData),
         headers: { 'content-type': 'application/json' },
@@ -19,7 +19,7 @@ export function createUser(userData) {
     return new Promise(async (resolve, reject) => {
       try {
         console.log('request sent',loginInfo)
-        const response = await fetch('http://localhost:8080/auth/login', {
+        const response = await fetch('https://foodiebackend-production.up.railway.app/auth/login', {
           method: 'POST',
           body: JSON.stringify(loginInfo),
           headers: { 'content-type': 'application/json' },

@@ -18,7 +18,7 @@ import {
   LineChart,
   Line,
 } from "recharts";
-import {  useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from 'react-redux';
 import { selectTotalCategories, selectTotalItems } from "../../product/ProductListSlice";
 import { fetchAdminOrdersAsync, fetchAllOrdersAsync, selectAdminOrders, selectOrders, selectTotalOrders } from "../../order/orderSlice";
 import { fetchAllUsersAsync, selecttotalusers } from "../../user/userSlice";

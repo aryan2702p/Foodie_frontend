@@ -2,7 +2,7 @@
 export function fetchProductById(id) {
   return new Promise(async (resolve) =>{
   
-    const response = await fetch('http://localhost:8080/products/'+id) 
+    const response = await fetch('https://foodiebackend-production.up.railway.app/products/'+id) 
     const data = await response.json()
     resolve({data})
   }
@@ -10,7 +10,7 @@ export function fetchProductById(id) {
 }
 export function createProduct(product) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:8080/products/', {
+    const response = await fetch('https://foodiebackend-production.up.railway.app/products/', {
       method: 'POST',
       body: JSON.stringify(product),
       headers: { 'content-type': 'application/json' },
@@ -23,7 +23,7 @@ export function createProduct(product) {
 export function updateProduct(update) {
   return new Promise(async (resolve) => {
     const response = await fetch(
-      'http://localhost:8080/products/' + update.id,
+      'https://foodiebackend-production.up.railway.app/products/' + update.id,
       {
         method: 'PATCH',
         body: JSON.stringify(update),
@@ -73,7 +73,7 @@ export function fetchProductsByFilter(filter, sort, pagination,admin) {
 
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch('http://localhost:8080/products?' + queryString);
+      const response = await fetch('https://foodiebackend-production.up.railway.app/products?' + queryString);
       if (!response.ok) {
     
         reject(new Error(`HTTP Error: ${response.status}`));
@@ -92,7 +92,7 @@ export function fetchProductsByFilter(filter, sort, pagination,admin) {
 export function fetchCategories() {
   return new Promise(async (resolve,reject) =>{
     try {
-      const response = await fetch('http://localhost:8080/categories');
+      const response = await fetch('https://foodiebackend-production.up.railway.app/categories');
       if (!response.ok) {
         
         reject(new Error(`HTTP Error: ${response.status}`));

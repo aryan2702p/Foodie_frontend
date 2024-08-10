@@ -1,5 +1,5 @@
 .login-background {
-    background-image: url("C:\Minor_project\cafe_online_ordering_system\frontend\public\loginbg.jpg"); /* Adjust the path */
+    background-image: url("../../../../public/loginbg.jpg"); /* Adjust the path */
     background-size: cover;
   }
 
